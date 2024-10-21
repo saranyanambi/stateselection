@@ -102,7 +102,7 @@ function App() {
       
 
       {selectedCountry && selectedState && selectedCity && (
-        <h4>You Selected {selectedCity} ,<span style={{"color":"grey"}}>{selectedState} ,{selectedCountry} </span></h4>
+        <h4>You Selected {selectedCity}, <span style={{"color":"grey"}}>{selectedState}, {selectedCountry} </span></h4>
       )}
     </div>
   );
