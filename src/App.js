@@ -35,7 +35,7 @@ function App() {
     setCities([]);
     }
     catch(e){
-      console.log("Network error",e)
+      console.error("Network error",e)
     }
   };
 
@@ -52,7 +52,7 @@ function App() {
     setSelectedCity("");
     }
     catch(e){
-      console.log("Network error",e)
+      console.error("Network error",e)
     }
   };
 
