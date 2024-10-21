@@ -27,12 +27,16 @@ function App() {
     const country = e.target.value;
     setSelectedCountry(country);
     setStatedisable(false)
-    // setCitydisable(!citydisable)
+    try{
     const res = await fetch(`https://crio-location-selector.onrender.com/country=${country}/states`);
     const data = await res.json();
     setStates(data);
     setSelectedState("");
     setCities([]);
+    }
+    catch(e){
+      console.log("Network error",e)
+    }
   };
 
   const handleStateChange = async (e) => {
@@ -40,12 +44,16 @@ function App() {
     setSelectedState(stateValue);
     setCitydisable(false)
     
-    
+    try{
     const res = await fetch(`https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${stateValue}/cities`);
     const data = await res.json();
     setCities(data);
   
     setSelectedCity("");
+    }
+    catch(e){
+      console.log("Network error",e)
+    }
   };
 
   const handleCityChange = (e) => {
