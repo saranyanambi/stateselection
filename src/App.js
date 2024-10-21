@@ -29,6 +29,10 @@ function App() {
     setStatedisable(false)
     try{
     const res = await fetch(`https://crio-location-selector.onrender.com/country=${country}/states`);
+    if (!res.ok)
+      {
+        throw new Error ("fail to fetch states")
+      }
     const data = await res.json();
     setStates(data);
     setSelectedState("");
@@ -46,6 +50,10 @@ function App() {
     
     try{
     const res = await fetch(`https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${stateValue}/cities`);
+    if (!res.ok)
+    {
+      throw new Error ("fail to fetch states")
+    }
     const data = await res.json();
     setCities(data);
   
